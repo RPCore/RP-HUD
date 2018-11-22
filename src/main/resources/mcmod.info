@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "rphud",
+  "name": "RP-HUD",
+  "description": "Mod permettant d'avoir un HUD personnalisé et adapté pour le RP. Il a été créé en grande partie par Nathanael2611 pour le RPCore.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Nathanael2611"],["RPCoreTeam",
+  "credits": "Merci à l'équipe de RPCore.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
