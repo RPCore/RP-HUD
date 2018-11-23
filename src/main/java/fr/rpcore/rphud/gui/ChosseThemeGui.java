@@ -74,8 +74,19 @@ public class ChosseThemeGui extends GuiScreen {
             //drawModalRectWithCustomSizedTexture(offLeft, offTop, 0, 0, ImageScale,ImageScale,ImageScale,ImageScale);
 
             Minecraft.getMinecraft().fontRenderer.drawString(ChatFormatting.WHITE+"Thème : ", offLeft + 169 - 140 , 20 + topOffset, 0X000000);
+            File file=new File(Minecraft.getMinecraft().mcDataDir+"/config/", "rphudtheme.txt");
+
+            int x90 = Integer.parseInt(Methods.FileReader(file));
+
+            if(x90>2){
+                Minecraft.getMinecraft().fontRenderer.drawString(ChatFormatting.RED+"Ce thème n'existe pas !"+ChatFormatting.WHITE, offLeft + 169 - 140 , 80 + topOffset, 0X000000);
+
+            }
+
 
             this.buttonList.add(new GuiButton( 1, offLeft + 169 - 140, 65, 100, 20, "Changer le thème"));
+
+
 
 
             super.drawScreen(parWidth, parHeight, particle);
