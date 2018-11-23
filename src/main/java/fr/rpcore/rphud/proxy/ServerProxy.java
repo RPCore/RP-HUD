@@ -4,31 +4,24 @@ import java.io.File;
 
 public class ServerProxy extends CommonProxy {
 
-
-
     @Override
-    public void preInit(File configFile)
-    {
-
+    public void preInit(File configFile) {
         super.preInit(configFile);
-
-        System.out.println("salut ! Côté server c'te fois ci :)");
+        System.out.println("Server side.)");
 
     }
 
 
     @Override
-    public void init()
-    {
+    public void init() {
         super.init();
     }
-
-
-
 
 }
 /*
 
     Class By Nathanael2611
+    EDIT 23/11/2018 : M4TH1EU_
+
 
  */
