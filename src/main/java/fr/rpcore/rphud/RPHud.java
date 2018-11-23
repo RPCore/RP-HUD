@@ -2,12 +2,16 @@ package fr.rpcore.rphud;
 
 import fr.rpcore.rphud.events.Events;
 import fr.rpcore.rphud.proxy.CommonProxy;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+
+import java.io.*;
 
 @Mod(modid="rphud")
 public class RPHud {
@@ -34,12 +38,50 @@ public class RPHud {
 
     }
 
+    public static Configuration cfg;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
 
         proxy.preInit(event.getSuggestedConfigurationFile());
+
+
+        File file=new File(Minecraft.getMinecraft().mcDataDir+"/config/", "rphudtheme.txt");
+
+        if(Methods.FileReader(file).equals("notexist")){
+            try (PrintWriter output = new PrintWriter(file)){
+
+
+                output.print("1");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
+        //Configuration
+
+         cfg = new Configuration(event.getSuggestedConfigurationFile());
+
+        try
+        {
+            cfg.load();
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Failed to load configuration");
+        }
+        finally
+        {
+            if(cfg.hasChanged())
+            {
+                cfg.save();
+            }
+        }
+
+
 
 
 
@@ -64,3 +106,8 @@ public class RPHud {
     }
 
 }
+/*
+
+    Class By Nathanael2611
+
+ */
